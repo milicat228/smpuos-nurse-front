@@ -1,0 +1,35 @@
+<div style="margin: 20px; padding: 20px">
+  <div class="profile">
+    <div style="display: table-cell; width: auto; min-width: 400px; background-size: cover; background-image: url(assets/images/profile.jpg)"></div>
+    <div style="display: table-cell; width: 800px;background: #ffffff; padding: 20px; position: relative;">
+      <h1 id="name">{{profile.firstname}} {{profile.lastname}} </h1>
+    <i class="text-muted">Korisnik @{{profile.username}} registrovan od {{profile.registrationDate | date}} </i><br/>
+      <hr/>
+      <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Lične informacije</legend>
+        <b>JMBG: </b><span *ngIf="profile.jmbg; else unknown">{{profile.jmbg}}</span><br/>
+        <b>Datum rođenja: </b><span *ngIf="profile.dateOfBirth; else unknown">{{profile.dateOfBirth | date}}</span><br/>
+        <b>Stručna sprema: </b><span *ngIf="profile.professionalQualification; else unknown">
+                                {{profile.professionalQualification.name}} ({{profile.professionalQualification.description}})
+                              </span><br/>
+      </fieldset> <br/>
+      <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Konktakt informacije</legend>
+        <i class="fa fa-envelope blue-fa" aria-hidden="true"></i><b>Email: </b><span *ngIf="profile.email; else unknown">{{profile.email}}</span><br/>
+        <i class="fa fa-phone blue-fa" aria-hidden="true"></i><b>Broj telefona: </b><span *ngIf="profile.phoneNumber; else unknown">{{profile.phoneNumber}}</span><br/>
+        <i class="fa fa-map-marker blue-fa" aria-hidden="true"></i><b>Adresa: </b><span *ngIf="profile.address; else unknown">{{profile.address}}</span><br/>
+      </fieldset>
+    <div class="btn-toolbar pull-right " role="toolbar" style="position: absolute; right: 10px; bottom:10px">
+        <div class="btn-group mr-2" role="group">
+          <app-change-password-form></app-change-password-form>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+</div>
+
+<ng-template #unknown>
+  Nepoznato
+</ng-template>
