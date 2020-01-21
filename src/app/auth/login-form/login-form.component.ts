@@ -37,9 +37,9 @@ export class LoginFormComponent implements OnInit {
         this.router.navigate(['home']);
       },
       (error) => {
-        console.log(error.error);
+        console.log(error);
         this.loading = false;
-        this.message = error.error;
+        this.message = error.details;
       }
     );
   }

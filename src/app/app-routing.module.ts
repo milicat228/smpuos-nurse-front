@@ -1,3 +1,4 @@
+import { PatientPageComponent } from './pages/patient-page/patient-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouteGuardService } from './auth/service/route-guard.service';
@@ -8,7 +9,8 @@ import { LoginGuardService } from './auth/service/login-guard.service';
 
 const routes: Routes = [
   { path: '', component: LoginPageComponent, canActivate: [LoginGuardService]},
-  { path: 'home', component: HomePageComponent,  canActivate: [RouteGuardService] },
+  { path: 'home', component: HomePageComponent, canActivate: [RouteGuardService] },
+  { path: 'patient/:lbo', component: PatientPageComponent,  canActivate: [RouteGuardService] },
   { path: 'profile', component: ProfilePageComponent,  canActivate: [RouteGuardService] }
 ];
 

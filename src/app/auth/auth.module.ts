@@ -1,7 +1,7 @@
 import { ResponseErrorInterceptor } from './interceptor/resonpse-error-interceptor';
 import { RouteGuardService } from './service/route-guard.service';
 import { JwtInterceptor } from './interceptor/jwt-interceptor';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

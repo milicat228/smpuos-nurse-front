@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h1>Pregled zakazanih termina pacijenta</h1>
+  <p class="lead">Ova stranica omogućava pregled zakazanih termina pacijenta.</p>
+</div>
+
+<table class="table table-striped table-sm">
+  <thead>
+  <tr>
+    <th scope="col">Datum i vreme</th>
+    <th scope="col">Trajanje pregleda</th>
+    <th scope="col">Lekar</th>
+    <th scope="col">Pacijent došao</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>vreme i datum</td>
+    <td>trajanje</td>
+    <td>lekar</td>
+    <td>-</td>
+    <td><a tooltip="Potvrdi dolazak" class="edit" (click)="confirmArrival()"><i class="fa fa-edit blue-fa"></i> Potvrdi dolazak</a></td>
+  </tr>
+  </tbody>
+</table>

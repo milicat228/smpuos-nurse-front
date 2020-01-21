@@ -1,3 +1,4 @@
+import { PatientModule } from './patient/patient.module';
 import { ResponseErrorInterceptor } from './auth/interceptor/resonpse-error-interceptor';
 import { AuthModule } from './auth/auth.module';
 import { BasicUiModule } from './basic-ui/basic-ui.module';
@@ -13,6 +14,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './auth/interceptor/jwt-interceptor';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { PatientPageComponent } from './pages/patient-page/patient-page.component';
 
 
 @NgModule({
@@ -20,14 +22,16 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    PatientPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BasicUiModule,
-    AuthModule
+    AuthModule,
+    PatientModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

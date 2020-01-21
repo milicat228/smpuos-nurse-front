@@ -1,0 +1,14 @@
+<ngb-tabset>
+  <ngb-tab>
+    <ng-template ngbTabTitle> <i class="fa fa-id-card-alt blue-fa" aria-hidden="true"></i> Karton pacijenta</ng-template>
+    <ng-template ngbTabContent>
+     <app-patient-info-display  class="tab-content" [lbo] = "lbo"></app-patient-info-display>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle> <i class="fa fa-user-clock blue-fa" aria-hidden="true"></i> Zakazani termini</ng-template>
+    <ng-template ngbTabContent>
+      <app-appointment-display class="tab-content" [lbo] = "lbo"></app-appointment-display>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
