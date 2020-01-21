@@ -1,0 +1,20 @@
+.jumbotron{
+    padding: 20px;
+  }
+  
+  .edit {
+    margin-right: 3px;
+  }
+  
+  .edit > .fa{
+    margin-right: 3px;
+  }
+  
+  .edit > .fa:hover{
+    color:darkslategrey;
+  }
+
+  tr td:first-child{
+      font-weight: bold;
+      max-width: 120px;
+  }

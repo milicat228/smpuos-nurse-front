@@ -1,15 +1,57 @@
-<div>
-  *{{patient.id}}<br>
-  *{{patient.firstname}}<br>
-  *{{patient.lastname}}<br>
-  *{{patient.dateOfBirth}}<br>
-  *{{patient.gender}}<br>
-  *{{patient.insuranceBase}}<br>
-  *{{patient.insurancePayer}}<br>
-  *{{patient.insurenceEndDate}}<br>
-  *{{patient.adress}}<br>
-  *{{patient.phoneNumber}}<br>
-  *{{patient.zk}}<br>
-  *{{patient.jmbg}}<br>
-  *{{patient.lbo}}<br>
+<div class="jumbotron">
+  <h1>Pregled kartona pacijenta</h1>
+  <p class="lead">Ova stranica omogućava pregled kartona pacijenta.</p>
 </div>
+
+<table class="table table-striped table-sm">
+  <tbody>
+  <tr>
+    <td>Ime:</td>
+    <td>{{patient.firstname}}</td>
+  </tr>
+  <tr>
+    <td>Prezime:</td>
+    <td>{{patient.lastname}}</td>
+  </tr>
+  <tr>
+    <td>JMBG:</td>
+    <td>{{patient.jmbg}}</td>
+  </tr>
+  <tr>
+    <td>Pol:</td>
+    <td>{{patient.gender===null? "nepoznato" : patient.gender==="MALE"? "Muški":"Ženski"}}</td>
+  </tr>
+  <tr>
+    <td>Datum rođenja:</td>
+    <td>{{patient.dateOfBirth===null? "nepoznato" : patient.dateOfBirth | date}}</td>
+  </tr>
+  <tr>
+    <td>Osnov osiguranja:</td>
+    <td>{{patient.insurenceBase===null? "nepoznato" : patient.insurenceBase.name}}</td>
+  </tr>
+  <tr>
+    <td>Obveznik doprinosa:</td>
+    <td>{{patient.insurencePayer===null? "nepoznato" : patient.insurencePayer.name}}</td>
+  </tr>
+  <tr>
+    <td>Datum isteka osiguranja:</td>
+    <td>{{patient.insurenceEndDate===null? "nepoznato" : patient.insurenceEndDate | date}}</td>
+  </tr>
+  <tr>
+    <td>LBO:</td>
+    <td>{{patient.lbo}}</td>
+  </tr>
+  <tr>
+    <td>ZK:</td>
+    <td>{{patient.zk}}</td>
+  </tr>
+  <tr>
+    <td>Adresa:</td>
+    <td>{{patient.adress===null? "nepoznato" : patient.adress}}</td>
+  </tr>
+  <tr>
+    <td>Broj telefona:</td>
+    <td>{{patient.phoneNumber===null? "nepoznato" : patient.phoneNumber}}</td>
+  </tr>
+  </tbody>
+</table>

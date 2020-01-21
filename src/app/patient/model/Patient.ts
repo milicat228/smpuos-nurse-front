@@ -16,8 +16,8 @@ export class Patient {
     lastname: string;
     dateOfBirth: Date;
     gender: string;
-    insuranceBase: InsuranceBase = new InsuranceBase();
-    insurancePayer: InsurancePayer = new InsurancePayer();
+    insurenceBase: InsuranceBase = new InsuranceBase();
+    insurencePayer: InsurancePayer = new InsurancePayer();
     insurenceEndDate: Date;
     adress: string;
     phoneNumber: string;
