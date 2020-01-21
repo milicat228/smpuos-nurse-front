@@ -23,6 +23,6 @@ export class PatientRestService {
 
   confirmAppointment(patientId, appointmentId): Observable<any> {
     const url = this.url + this.patientUrl + '/' + patientId + this.appointmentUrl + '/' + appointmentId;
-    return this.http.post(url, null, environment.httpOptions);
+    return this.http.put(url, null, environment.httpOptions);
   }
 }

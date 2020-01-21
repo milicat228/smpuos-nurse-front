@@ -1,9 +1,17 @@
-export class Profile {
+export class Appointments {
+  patientBlocked: number;
+  appointments: Appointment[] = [];
+  constructor() {
+  }
+}
+
+export class Appointment {
   id: number;
-  dateAndTime: Date;
+  date: Date;
   duration: number;
   doctorName: String;
-  patientArrived: Boolean;
+  patientArrivedOnTime: Boolean;
+  status: String;
   constructor() {
   }
 }

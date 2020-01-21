@@ -1,3 +1,5 @@
+import { Appointments } from './../model/Appointment';
+import { PatientRestService } from './../service/patient-rest.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,13 +9,30 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AppointmentDisplayComponent implements OnInit {
   @Input() lbo = '';
+  appointments: Appointments = new Appointments();
 
-  constructor() { }
+  constructor(private patientService: PatientRestService) { }
 
   ngOnInit() {
+    if (this.lbo !== '') {
+      this.patientService.appointments(this.lbo).subscribe(
+        appointments => {
+          this.appointments = appointments;
+        }
+      );
+    }
   }
 
-  confirmArrival() {
+  confirmArrival(appointment) {
+    appointment.patientArrived = true;
+    appointment.status = 'IN_PAST';
+    this.patientService.confirmAppointment(this.lbo, appointment.id).subscribe(
+      confirmation => {
+        if (!confirmation) {
+          alert('Fallback se desio na backu.');
+        }
+      }
+    );
   }
 
 }
