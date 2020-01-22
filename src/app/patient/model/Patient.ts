@@ -19,7 +19,7 @@ export class Patient {
     insurenceBase: InsuranceBase = new InsuranceBase();
     insurencePayer: InsurancePayer = new InsurancePayer();
     insurenceEndDate: Date;
-    adress: string;
+    address: string;
     phoneNumber: string;
     zk: string;
     jmbg: string;
